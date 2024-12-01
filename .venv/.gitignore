@@ -1,0 +1,17 @@
+# Ignore IDE files
+.idea/
+*.iml
+
+# Ignore temporary system files
+*.DS_Store
+Thumbs.db
+
+# Ignore temporary or generated files
+__pycache__/
+*.pyc
+*.log
+
+# Include necessary directories but ignore temporary files within them
+assets/*.tmp
+config/*.tmp
+dataset/*.tmp
