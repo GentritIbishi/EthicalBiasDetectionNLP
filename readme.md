@@ -51,29 +51,54 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
 1. **Data Collection**: The project uses a robust Twitter data collection system implemented in tweepy_api.ipynb including key features like:
    
-   *Multiple bearer token support for extended rate limits
-   *Automatic rate limit handling with wait periods
-   *Batch processing to prevent memory overload
-   *Error handling and retry mechanisms
+   *Multiple bearer token support for extended rate limits  
+   *Automatic rate limit handling with wait periods  
+   *Batch processing to prevent memory overload  
+   *Error handling and retry mechanisms  
    ```
    # Twitter API configuration
-BEARER_TOKENS = [
+   BEARER_TOKENS = [
     "TOKEN1",
     "TOKEN2",
     "TOKEN3"
-]
+   ]
 
-# Configurable query parameters
-queries = [
+   # Configurable query parameters
+   queries = [
     '(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet'
-]
+   ]
     ```
     
-2. **Data Preprocessing**: Cleaning and preprocessing data by removing URLs, special characters, and performing sentiment analysis.
+2. **Data Preprocessing**: Comprehensive text preprocessing implemented in the EthicalBiasDetection class. Cleaning and preprocessing data by removing URLs, special characters, and performing sentiment analysis.
+
+       #  def _remove_urls_and_special_chars(self, text):
+       # Remove URLs
+       text = re.sub(r'https?://\S+|www\.\S+', '', text)
+       # Remove mentions and hashtags
+       text = re.sub(r'@\w+|#', '', text)
+       # Remove non-alphabetic characters
+       text = re.sub(r'[^a-zA-Z\s]', '', text.lower())
+       return text.strip()
+  
 
    ![img.png](assets/preprocessing.png)
 
-3. **Bias Detection**: Detecting gender, racial, political, and other biases using advanced natural language processing techniques.
+3. **Bias Detection**: Detecting gender, racial, political, and other biases using advanced natural language processing techniques. 
+
+       # def detect_bias(self):
+       # Gender bias detection
+       gender_pronouns = {
+           'male': ['he', 'his', 'him'],
+           'female': ['she', 'her', 'hers'],
+           'neutral': ['they', 'their', 'them']
+       }
+       
+       # Racial and ethnic term analysis
+       racial_terms = {
+           'kosovo': ['kosovo', 'albanian', 'albanians'],
+           'serbia': ['serbia', 'serbian', 'serbs'],
+           'conflict-related': ['ethnic', 'minority', 'majority']
+       }
 
    ![img.png](assets/biasdetection.png)
 
