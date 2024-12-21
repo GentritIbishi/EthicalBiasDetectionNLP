@@ -1,10 +1,10 @@
 # Ethical Bias Detection in Kosovo-Serbia Relations Analysis and Conflict Mitigation on Twitter/X
 
-## Description
+### Description
 
 This repository contains a project focused on analyzing Kosovo-Serbia relations and mitigating conflicts on Twitter/X. The project involves collecting data, processing and analyzing tweets to detect biases, quantify conflicts, and implement techniques for conflict mitigation.
 
-## University, Faculty, Level of Study, Course, and Instructor
+### University, Faculty, Level of Study, Course, and Instructor
 
 - **University**:  University of Prishtina
 - **Faculty**: Faculty of Electrical and Computer Engineering
@@ -19,14 +19,14 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
 
   ---
 
-## Development Environment  
+### Development Environment  
 
 - **Programming Language**: `Python` 
 - **IDE**: `PyCharm Professional Edition` 
 - **Version Control**: `Git`
  
 
-## Dataset Details
+### Dataset Details
 
 - **Total Rows**: `668`
 - **Attributes**: `Tweet`  
@@ -35,7 +35,7 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
 - **Data Collection Period**: `November & December 2024`
 
  
-## Project structure
+### Project structure
  <img width="540" alt="Bildschirmfoto 2024-12-21 um 23 11 15" src="https://github.com/user-attachments/assets/5123584b-fba1-48ef-be24-e056c4bd1789" />
 
 ---
@@ -186,9 +186,15 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
 ---
 
-## Getting Started
+## Installation and Usage
 
-### Installation
+### Prerequisites
+  
+  `Python 3.x`  
+  `PyCharm IDE`    
+  `Twitter API credentials`  
+
+### Setup Steps
 
 1. Clone the repository:  
    ```
@@ -196,5 +202,5 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 2. Install required packages  
    `pip install pandas numpy tweepy scikit-learn transformers textblob wordcloud seaborn matplotlib imblearn`
 4. Usage  
-   Set up your Twitter API credentials in tweepyAPI.ipynb & run it.
-5. Open and run the main.ipynb file
+   Set up your Twitter API credentials in tweepyAPI.ipynb, update query parameters if needed & run it.
+5. Open and run the main.ipynb file to perform the analysis
