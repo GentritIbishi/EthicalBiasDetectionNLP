@@ -111,6 +111,17 @@ This project implements a NLP-based system for analyzing and mitigating biases i
    *Batch processing to prevent memory overload  
    *Error handling and retry mechanisms
    
+### Usage Compliance
+
+`Project registered as academic research`  
+`Data collection focused on public tweets only`   
+`Compliant with Twitter's developer terms`   
+`No reselling or redistribution of Twitter data`   
+`Multiple bearer tokens used for efficient rate limit management`   
+   <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 03 52" src="https://github.com/user-attachments/assets/1f1b3e44-6951-4a75-8168-e33d397b52f8" />
+   <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 01 31" src="https://github.com/user-attachments/assets/1773ddaf-eb0b-4186-9ce2-1771b5b1bb49" />  
+
+   
 ![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)
 
    ```
