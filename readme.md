@@ -125,7 +125,7 @@ This project implements a NLP-based system for analyzing and mitigating biases i
    queries = [
     '(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet'
    ]
-    ```
+   ```
     
 3. **Data Preprocessing**: Comprehensive text preprocessing implemented in the EthicalBiasDetection class. Cleaning and preprocessing data by removing URLs, special characters, and performing sentiment analysis.
 
