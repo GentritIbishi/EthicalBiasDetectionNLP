@@ -29,20 +29,65 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
 
 ---
 
-## Technologies Used
+## Required Libraries and Their Functions  
+### Core Data Processing Libraries  
+- Pandas  
+  Purpose: Data manipulation and analysis  
+  ```
+  # DataFrame operations
+   df.dropna(subset=['Tweet'])  # Remove missing values
+   df.drop_duplicates()         # Remove duplicate tweets
+   df['new_column'] = df['Tweet'].apply(function)  # Apply transformations
+  ```
+- NumPy  
+  ```
+  Purpose: Numerical computations
+  ```
+- SMOTE (Oversampling)  
+- LogisticRegression  
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- WordCloud
+### Natural Language Processing Libraries  
+- Transformers  
+  Purpose: State-of-the-art NLP models  
+  Implementation:
+  ```
+  from transformers import pipeline
+   sentiment_pipeline = pipeline('sentiment-analysis', 
+                            model='distilbert/distilbert-base-uncased-finetuned-sst-2-english')
+  ```
 - TextBlob
-- Scikit-learn
-- Transformers
-- SMOTE (Oversampling)
-- LogisticRegression
+  Purpose: Text processing and sentiment analysis  
+  Features: Sentiment scoring, subjectivity analysis  
 
+### Visualization Libraries
+- Matplotlib & Seaborn
+  ```
+  def visualize_analysis(self):
+    plt.figure(figsize=(8, 6))
+    sns.barplot(data=gender_df, x='Gender', y='Bias', palette='pastel')
+    plt.title('Gender Bias Analysis')
+  ```
+- wordcloud
+  Purpose: Generate word frequency visualizations
+  ```
+  wordcloud = WordCloud(stopwords='english', 
+                     background_color='white').generate(' '.join(texts))
+  ```
+### Machine Learning Libraries
+- scikit-learn
+Components used:  
+CountVectorizer: Text vectorization  
+train_test_split: Data splitting  
+LogisticRegression: Classification  
+metrics: Performance evaluation  
+
+- imblearn
+  Purpose: Handle imbalanced datasets
+  Implementation:
+  ```
+  smote = SMOTE()
+   X_train_resampled, y_train_resampled = smote.fit_resample(X_train_vec, y_train)
+  ```
 ---
 
 ## Project Overview
