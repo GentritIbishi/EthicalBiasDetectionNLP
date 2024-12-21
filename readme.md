@@ -43,8 +43,7 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
   ```
   Purpose: Numerical computations
   ```
-- SMOTE (Oversampling)  
-- LogisticRegression  
+ - LogisticRegression  
 
 ### Natural Language Processing Libraries  
 - Transformers  
@@ -177,6 +176,10 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/kosovo-serbia-analysis.git
+1. Clone the repository:  
+   ```
+   [git clone https://github.com/yourusername/kosovo-serbia-analysis.git]
+2. Install required packages  
+3. Usage  
+   Set up your Twitter API credentials in tweepyAPI.ipynb & run it.
+4. Open and run the main.ipynb file
