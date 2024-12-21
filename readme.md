@@ -17,12 +17,14 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
 - **MSc. (c) Gentrit Ibishi**  
 - **MSc. (c) Guxim Selmani**
 
-### Development Environment  
+  ---
 
-Programming Language: Python  
-IDE: PyCharm Professional Edition  
-Version Control: Git  
----
+## Development Environment  
+
+- **Programming Language**: `Python` 
+- **IDE**: `PyCharm Professional Edition` 
+- **Version Control**: `Git`
+ 
 
 ## Dataset Details
 
@@ -32,8 +34,7 @@ Version Control: Git
 - **Query Parameters**: `Focused on Kosovo-Serbia relations and conflicts`
 - **Data Collection Period**: `November & December 2024`
 
-![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)
-
+ 
 ## Project structure
  <img width="540" alt="Bildschirmfoto 2024-12-21 um 23 11 15" src="https://github.com/user-attachments/assets/5123584b-fba1-48ef-be24-e056c4bd1789" />
 
@@ -103,12 +104,15 @@ metrics: Performance evaluation
 
 This project implements a NLP-based system for analyzing and mitigating biases in social media discourse surrounding Kosovo-Serbia relations. The system processes Twitter data to detect various forms of bias, quantify conflicts, and implement conflict mitigation strategies through advanced natural language processing techniques. It includes the following steps:
 
-1. **Data Collection**: The project uses a robust Twitter data collection system implemented in tweepy_api.ipynb including key features like:
+1. **Data Collection**: The project uses a robust Twitter data collection system implemented in tweepy_api.ipynb including key features:
    
    *Multiple bearer token support for extended rate limits  
    *Automatic rate limit handling with wait periods  
    *Batch processing to prevent memory overload  
-   *Error handling and retry mechanisms  
+   *Error handling and retry mechanisms
+   
+![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)
+
    ```
    # Twitter API configuration
    BEARER_TOKENS = [
@@ -123,7 +127,7 @@ This project implements a NLP-based system for analyzing and mitigating biases i
    ]
     ```
     
-2. **Data Preprocessing**: Comprehensive text preprocessing implemented in the EthicalBiasDetection class. Cleaning and preprocessing data by removing URLs, special characters, and performing sentiment analysis.
+3. **Data Preprocessing**: Comprehensive text preprocessing implemented in the EthicalBiasDetection class. Cleaning and preprocessing data by removing URLs, special characters, and performing sentiment analysis.
 
        #  def _remove_urls_and_special_chars(self, text):
        # Remove URLs
@@ -137,7 +141,7 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
    ![img.png](assets/preprocessing.png)
 
-3. **Bias Detection**: Detecting gender, racial, political, and other biases using advanced natural language processing techniques. 
+4. **Bias Detection**: Detecting gender, racial, political, and other biases using advanced natural language processing techniques. 
 
        # def detect_bias(self):
        # Gender bias detection
@@ -156,15 +160,15 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
    ![img.png](assets/biasdetection.png)
 
-4. **Quantifying Bias**: Quantifying bias by counting conflict-related and peace-related terms in tweets.
+5. **Quantifying Bias**: Quantifying bias by counting conflict-related and peace-related terms in tweets.
 
    ![img.png](assets/quantifyingbias.png)
 
-5. **Mitigation**: Neutralizing gender and racial biases through text manipulation.
+6. **Mitigation**: Neutralizing gender and racial biases through text manipulation.
 
       ![img.png](assets/biasmitigation.png)
 
-6. **Visualization**: Visualizing biases through bar plots, word clouds, and sentiment distributions.
+7. **Visualization**: Visualizing biases through bar plots, word clouds, and sentiment distributions.
 
    ![img.png](assets/genderbias.png)
 
@@ -176,7 +180,7 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
    ![img.png](assets/wordsdistribution.png)
 
-7. **Model Evaluation**: Evaluating sentiment prediction using Logistic Regression and SMOTE for handling class imbalance.
+8. **Model Evaluation**: Evaluating sentiment prediction using Logistic Regression and SMOTE for handling class imbalance.
 
    ![img.png](assets/evaluationmodel.png)
 
