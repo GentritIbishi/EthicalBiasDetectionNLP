@@ -17,6 +17,11 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
 - **MSc. (c) Gentrit Ibishi**  
 - **MSc. (c) Guxim Selmani**
 
+### Development Environment  
+
+Programming Language: Python  
+IDE: PyCharm Professional Edition  
+Version Control: Git  
 ---
 
 ## Dataset Details
@@ -24,8 +29,13 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
 - **Total Rows**: `668`
 - **Attributes**: `Tweet`  
 - **Source**: `Web scraping from Tweet API`
+- **Query Parameters**: `Focused on Kosovo-Serbia relations and conflicts`
+- **Data Collection Period**: `November & December 2024`
 
 ![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)
+
+## Project structure
+ <img width="540" alt="Bildschirmfoto 2024-12-21 um 23 11 15" src="https://github.com/user-attachments/assets/5123584b-fba1-48ef-be24-e056c4bd1789" />
 
 ---
 
@@ -59,37 +69,37 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
   Features: Sentiment scoring, subjectivity analysis  
 
 ### Visualization Libraries
-- Matplotlib & Seaborn
+- Matplotlib & Seaborn  
   ```
   def visualize_analysis(self):
     plt.figure(figsize=(8, 6))
     sns.barplot(data=gender_df, x='Gender', y='Bias', palette='pastel')
     plt.title('Gender Bias Analysis')
-  ```
-- wordcloud
+  ```  
+- wordcloud  
   Purpose: Generate word frequency visualizations
   ```
   wordcloud = WordCloud(stopwords='english', 
                      background_color='white').generate(' '.join(texts))
   ```
 ### Machine Learning Libraries
-- scikit-learn
+- scikit-learn  
 Components used:  
 CountVectorizer: Text vectorization  
 train_test_split: Data splitting  
 LogisticRegression: Classification  
 metrics: Performance evaluation  
 
-- imblearn
-  Purpose: Handle imbalanced datasets
-  Implementation:
+- imblearn  
+  Purpose: Handle imbalanced datasets  
+  Implementation:  
   ```
   smote = SMOTE()
    X_train_resampled, y_train_resampled = smote.fit_resample(X_train_vec, y_train)
   ```
 ---
 
-## Project Overview
+## Project Overview  
 
 This project implements a NLP-based system for analyzing and mitigating biases in social media discourse surrounding Kosovo-Serbia relations. The system processes Twitter data to detect various forms of bias, quantify conflicts, and implement conflict mitigation strategies through advanced natural language processing techniques. It includes the following steps:
 
@@ -180,6 +190,7 @@ This project implements a NLP-based system for analyzing and mitigating biases i
    ```
    [git clone https://github.com/yourusername/kosovo-serbia-analysis.git]
 2. Install required packages  
-3. Usage  
+   `pip install pandas numpy tweepy scikit-learn transformers textblob wordcloud seaborn matplotlib imblearn`
+4. Usage  
    Set up your Twitter API credentials in tweepyAPI.ipynb & run it.
-4. Open and run the main.ipynb file
+5. Open and run the main.ipynb file
