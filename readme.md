@@ -43,7 +43,7 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
 ## Required Libraries and Their Functions  
 ### Core Data Processing Libraries  
 - Pandas  
-  Purpose: Data manipulation and analysis  
+  Purpose: *Data manipulation and analysis*    
   ```
   # DataFrame operations
    df.dropna(subset=['Tweet'])  # Remove missing values
@@ -54,11 +54,10 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
   ```
   Purpose: Numerical computations
   ```
- - LogisticRegression  
 
 ### Natural Language Processing Libraries  
 - Transformers  
-  Purpose: State-of-the-art NLP models  
+  Purpose: *State-of-the-art NLP models*    
   Implementation:
   ```
   from transformers import pipeline
@@ -66,8 +65,8 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
                             model='distilbert/distilbert-base-uncased-finetuned-sst-2-english')
   ```
 - TextBlob
-  Purpose: Text processing and sentiment analysis  
-  Features: Sentiment scoring, subjectivity analysis  
+  Purpose: *Text processing and sentiment analysis*  
+  Features: *Sentiment scoring, subjectivity analysis*    
 
 ### Visualization Libraries
 - Matplotlib & Seaborn  
@@ -78,7 +77,7 @@ This repository contains a project focused on analyzing Kosovo-Serbia relations 
     plt.title('Gender Bias Analysis')
   ```  
 - wordcloud  
-  Purpose: Generate word frequency visualizations
+  Purpose: *Generate word frequency visualizations*  
   ```
   wordcloud = WordCloud(stopwords='english', 
                      background_color='white').generate(' '.join(texts))
@@ -92,7 +91,7 @@ LogisticRegression: Classification
 metrics: Performance evaluation  
 
 - imblearn  
-  Purpose: Handle imbalanced datasets  
+  Purpose: *Handle imbalanced datasets*    
   Implementation:  
   ```
   smote = SMOTE()
@@ -212,6 +211,5 @@ This project implements a NLP-based system for analyzing and mitigating biases i
    [git clone https://github.com/yourusername/kosovo-serbia-analysis.git]
 2. Install required packages  
    `pip install pandas numpy tweepy scikit-learn transformers textblob wordcloud seaborn matplotlib imblearn`
-4. Usage  
-   Set up your Twitter API credentials in tweepyAPI.ipynb, update query parameters if needed & run it.
+4. Usage: Set up your Twitter API credentials in tweepyAPI.ipynb, update query parameters if needed & run it.
 5. Open and run the main.ipynb file to perform the analysis
