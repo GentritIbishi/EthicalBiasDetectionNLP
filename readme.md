@@ -34,7 +34,6 @@ This repository contains an advanced Natural Language Processing (NLP) project f
      * **NLP Framework**: `Transformers, TextBlob`  
      * **ML**: `scikit-learn, imblearn`  
      * **Visualization**: `Matplotlib, Seaborn, WordCloud`   
- 
 
 ### Dataset Specifications
 
@@ -54,15 +53,15 @@ This repository contains an advanced Natural Language Processing (NLP) project f
 
 ### 1. Data Collection  
 The project implements a robust Twitter data collection system with rate limiting and error handling:
-![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)
+![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)  
    Key features:  
-   * Multiple bearer token support 
+   * Multiple bearer token support  
    * Automatic rate limit handling with wait periods    
    * Batch processing to prevent memory overload  
-   * Error handling and retry mechanisms
-   * "(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet"
+   * Error handling and retry mechanisms  
+   * "(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet"  
    
-    ```
+ 
    # Twitter API configuration
      BEARER_TOKENS = [
       "TOKEN1",
@@ -74,7 +73,7 @@ The project implements a robust Twitter data collection system with rate limitin
      queries = [
       '(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet'
      ]
-     ```
+   
     
 ### 2. Data Preprocessing  
 
@@ -191,6 +190,12 @@ Distribution of sentiment across the dataset:
 
 ### 7. Model Evaluation and Performance Analysis
 
+Evaluating sentiment prediction using Logistic Regression and SMOTE for handling class imbalance.  
+Uses Logistic Regression with SMOTE for balanced classification:  
+
+   ![img.png](assets/evaluationmodel.png)
+
+
 #### Implementation Details
 
 ```
@@ -229,7 +234,8 @@ Performance Metrics:
  
 
 
-8. **Visualization**: Visualizing biases through bar plots, word clouds, and sentiment distributions.
+### 8. Visualization:  
+Visualizing biases through bar plots, word clouds, and sentiment distributions.  
 
    ![img.png](assets/genderbias.png)
 
@@ -240,12 +246,6 @@ Performance Metrics:
    ![img.png](assets/sentimentdistribution.png)
 
    ![img.png](assets/wordsdistribution.png)
-
-10. **Model Evaluation**: Evaluating sentiment prediction using Logistic Regression and SMOTE for handling class imbalance.
-
-   ![img.png](assets/evaluationmodel.png)
-
-    Uses Logistic Regression with SMOTE for balanced classification:  
 
 
 ---
@@ -268,14 +268,14 @@ Performance Metrics:
 4. Usage: Set up your Twitter API credentials in tweepyAPI.ipynb, update query parameters if needed & run it.
 5. Open and run the main.ipynb file to perform the analysis
 
-## Twitter API Requirements and Compliance
+### Twitter API Requirements and Compliance
 ### Twitter API Registration Process
-1. **API Access Selection**   
-     <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 01 31" src="https://github.com/user-attachments/assets/1773ddaf-eb0b-4186-9ce2-1771b5b1bb49" />    
+#### API Access Selection     
+   <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 01 31" src="https://github.com/user-attachments/assets/1773ddaf-eb0b-4186-9ce2-1771b5b1bb49" />    
  *Twitter's API pricing plans showing Basic and Pro access levels with their respective rate limits and features*    
 
-2. **Developer Agreement**   
-     <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 03 52" src="https://github.com/user-attachments/assets/1f1b3e44-6951-4a75-8168-e33d397b52f8" />  
+#### Developer Agreement    
+   <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 03 52" src="https://github.com/user-attachments/assets/1f1b3e44-6951-4a75-8168-e33d397b52f8" />  
 *Developer agreement form where we specified our academic research use case for ethical bias detection*  
 
 **Usage Compliance**  
