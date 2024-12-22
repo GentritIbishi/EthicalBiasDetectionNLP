@@ -24,6 +24,31 @@ This repository contains an advanced Natural Language Processing (NLP) project f
 4. Evaluate sentiment distribution
 5. Provide data-driven insights into conflict-related discussions
 
+## Key NLP Concepts
+* **Sentiment Analysis**: Process of determining emotional tone in text
+* **Bias Detection**: Identifying systematic preferences or prejudices in language
+* **Text Preprocessing**: Cleaning and standardizing text data for analysis
+    * Removing URLs and special characters
+    * Converting text to lowercase
+    * Removing stop words
+* **Tokenization**: Breaking text into individual words/tokens
+* **Vectorization**: Converting text into numerical format for machine learning
+
+### Sentiment Analysis Details
+The project uses DistilBERT, a lightweight version of BERT (Bidirectional Encoder Representations from Transformers), which:
+* Pre-processes text into tokens
+* Analyzes context and relationships between words
+* Classifies sentiment as Positive/Negative
+* Provides confidence scores for predictions
+
+### Understanding Bias Metrics
+* **Gender Bias Score**: Measures pronoun usage imbalance
+* **Racial Term Frequency**: Analyzes mention frequencies of different groups
+* **Conflict-Peace Balance**: Ratio between conflict and peace-related terms
+    * Score > 0.5 indicates conflict-heavy discourse
+    * Score < 0.5 indicates peace-oriented discourse
+
+
 ## Technical Architecture  
 ### Development Environment    
 
