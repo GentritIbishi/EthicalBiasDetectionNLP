@@ -1,157 +1,124 @@
 # Ethical Bias Detection in Kosovo-Serbia Relations Analysis and Conflict Mitigation on Twitter/X
 
-### Description
+### Academic Context  
 
-This repository contains a project focused on analyzing Kosovo-Serbia relations and mitigating conflicts on Twitter/X. The project involves collecting data, processing and analyzing tweets to detect biases, quantify conflicts, and implement techniques for conflict mitigation.
+ **University**:  `University of Prishtina`  
+ **Faculty**: `Faculty of Electrical and Computer Engineering`  
+ **Level**: `Master's Degree`   
+ **Course**: `Natural Language Processing`  
+ **Instructor**: `Prof.Dr.Sc. Mërgim Hoti`  
+ **Authors**:  
 
-### University, Faculty, Level of Study, Course, and Instructor
-
-- **University**:  University of Prishtina
-- **Faculty**: Faculty of Electrical and Computer Engineering
-- **Level of Study**: Master  
-- **Course**: Natural Language Processing
-- **Instructor**: Prof.Dr.Sc. Mërgim Hoti 
-
-### Authors
-
-- **MSc. (c) Gentrit Ibishi**  
-- **MSc. (c) Guxim Selmani**
+   **MSc. (c) Gentrit Ibishi**  
+   **MSc. (c) Guxim Selmani**  
 
   ---
+## Project Overview
 
-### Development Environment  
+This repository contains an advanced Natural Language Processing (NLP) project focused on analyzing Kosovo-Serbia relations through social media discourse. The project implements sophisticated bias detection and conflict mitigation techniques to analyze Twitter/X data, providing insights into social media conversations surrounding this geopolitically sensitive topic.
 
-- **Programming Language**: `Python` 
-- **IDE**: `PyCharm Professional Edition` 
-- **Version Control**: `Git`
+## Research Objectives
+1. Analyze social media discourse patterns
+2. Detect and quantify various forms of bias
+3. Implement mitigation strategies
+4. Evaluate sentiment distribution
+5. Provide data-driven insights into conflict-related discussions
+
+## Technical Architecture  
+### Development Environment    
+
+* **Programming Language**: `Python`  
+* **IDE**: `PyCharm Professional Edition`  
+* **Version Control**: `Git`  
+     * **Data Processing**: `Pandas, NumPy`   
+     * **NLP Framework**: `Transformers, TextBlob`  
+     * **ML**: `scikit-learn, imblearn`  
+     * **Visualization**: `Matplotlib, Seaborn, WordCloud`   
  
 
-### Dataset Details
+### Dataset Specifications
 
-- **Total Rows**: `668`
-- **Attributes**: `Tweet`  
-- **Source**: `Web scraping from Tweet API`
-- **Query Parameters**: `Focused on Kosovo-Serbia relations and conflicts`
-- **Data Collection Period**: `November & December 2024`
+* **Total Records**: `668 tweets`  
+* **Primary Attributes**: `Tweet content`  
+* **Source**: `Web scraping from Tweet API`  
+* **Collection Period**: `November & December 2024`  
+* **Focus**: `Kosovo-Serbia relations and associated conflicts`  
 
  
-### Project structure
+## Project structure
  <img width="540" alt="Bildschirmfoto 2024-12-21 um 23 11 15" src="https://github.com/user-attachments/assets/5123584b-fba1-48ef-be24-e056c4bd1789" />
 
 ---
 
-## Required Libraries and Their Functions  
-### Core Data Processing Libraries  
-- Pandas  
-  Purpose: *Data manipulation and analysis*    
-  ```
-  # DataFrame operations
-   df.dropna(subset=['Tweet'])  # Remove missing values
-   df.drop_duplicates()         # Remove duplicate tweets
-   df['new_column'] = df['Tweet'].apply(function)  # Apply transformations
-  ```
-- NumPy  
-  ```
-  Purpose: Numerical computations
-  ```
+## Implementation Components
 
-### Natural Language Processing Libraries  
-- Transformers  
-  Purpose: *State-of-the-art NLP models*    
-  Implementation:
-  ```
-  from transformers import pipeline
-   sentiment_pipeline = pipeline('sentiment-analysis', 
-                            model='distilbert/distilbert-base-uncased-finetuned-sst-2-english')
-  ```
-- TextBlob
-  Purpose: *Text processing and sentiment analysis*  
-  Features: *Sentiment scoring, subjectivity analysis*    
-
-### Visualization Libraries
-- Matplotlib & Seaborn  
-  ```
-  def visualize_analysis(self):
-    plt.figure(figsize=(8, 6))
-    sns.barplot(data=gender_df, x='Gender', y='Bias', palette='pastel')
-    plt.title('Gender Bias Analysis')
-  ```  
-- wordcloud  
-  Purpose: *Generate word frequency visualizations*  
-  ```
-  wordcloud = WordCloud(stopwords='english', 
-                     background_color='white').generate(' '.join(texts))
-  ```
-### Machine Learning Libraries
-- scikit-learn  
-Components used:  
-CountVectorizer: Text vectorization  
-train_test_split: Data splitting  
-LogisticRegression: Classification  
-metrics: Performance evaluation  
-
-- imblearn  
-  Purpose: *Handle imbalanced datasets*    
-  Implementation:  
-  ```
-  smote = SMOTE()
-   X_train_resampled, y_train_resampled = smote.fit_resample(X_train_vec, y_train)
-  ```
----
-
-## Project Overview  
-
-This project implements a NLP-based system for analyzing and mitigating biases in social media discourse surrounding Kosovo-Serbia relations. The system processes Twitter data to detect various forms of bias, quantify conflicts, and implement conflict mitigation strategies through advanced natural language processing techniques. It includes the following steps:
-
-1. **Data Collection**: The project uses a robust Twitter data collection system implemented in tweepy_api.ipynb including key features:
-   
-   *Multiple bearer token support for extended rate limits*  
-   *Automatic rate limit handling with wait periods*  
-   *Batch processing to prevent memory overload*  
-   *Error handling and retry mechanisms*  
-   
-   
+### 1. Data Collection  
+The project implements a robust Twitter data collection system with rate limiting and error handling:
 ![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)
-
-   ```
+   Key features:  
+   * Multiple bearer token support 
+   * Automatic rate limit handling with wait periods    
+   * Batch processing to prevent memory overload  
+   * Error handling and retry mechanisms
+   * "(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet"
+   
+    ```
    # Twitter API configuration
-   BEARER_TOKENS = [
-    "TOKEN1",
-    "TOKEN2",
-    "TOKEN3"
-   ]
-
-   # Configurable query parameters
-   queries = [
-    '(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet'
-   ]
-   ```
-    
-3. **Data Preprocessing**: Comprehensive text preprocessing implemented in the EthicalBiasDetection class. Cleaning and preprocessing data by removing URLs, special characters, and performing sentiment analysis.
-
-       #  def _remove_urls_and_special_chars(self, text):
-       # Remove URLs
-       text = re.sub(r'https?://\S+|www\.\S+', '', text)
-       # Remove mentions and hashtags
-       text = re.sub(r'@\w+|#', '', text)
-       # Remove non-alphabetic characters
-       text = re.sub(r'[^a-zA-Z\s]', '', text.lower())
-       return text.strip()
+     BEARER_TOKENS = [
+      "TOKEN1",
+      "TOKEN2",
+      "TOKEN3"
+     ]
   
+     # Configurable query parameters
+     queries = [
+      '(Conflict Kosovo OR Conflict Serbia OR RKS OR SRB) lang:en -is:retweet'
+     ]
+     ```
+    
+### 2. Data Preprocessing  
+
+* URL and special character removal  
+* Duplicate tweet removal (61 duplicates identified and removed)  
+* Missing value handling  
+* Text normalization and cleaning   
+* Sentiment analysis using DistilBERT  
 
    ![img.png](assets/preprocessing.png)
 
-4. **Bias Detection**: Detecting gender, racial, political, and other biases using advanced natural language processing techniques. 
+     ```
+    def _remove_urls_and_special_chars(self, text):
+    # Remove URLs
+    text = re.sub(r'https?://\S+|www\.\S+', '', text)
+    # Remove mentions and hashtags
+    text = re.sub(r'@\w+|#', '', text)
+    # Remove non-alphabetic characters
+    text = re.sub(r'[^a-zA-Z\s]', '', text.lower())
+    return text.strip()```
 
-       # def detect_bias(self):
-       # Gender bias detection
-       gender_pronouns = {
+### 3. Bias Detection
+   The system analyzes multiple types of bias:
+   
+#### Gender Bias Analysis  
+   * Tracks usage of gendered pronouns  
+   * Current distribution shows:  
+      * Neutral pronouns: Highest usage (≈45%)  
+      * Male pronouns: Moderate usage (≈10%)  
+      * Female pronouns: Lowest usage (≈2%)  
+      
+        gender_pronouns = {
            'male': ['he', 'his', 'him'],
            'female': ['she', 'her', 'hers'],
            'neutral': ['they', 'their', 'them']
        }
-       
-       # Racial and ethnic term analysis
+
+#### Racial and Ethnic Term Analysis  
+Monitors frequency of terms related to:  
+
+* Kosovo/Albanian mentions: ~190 occurrences  
+* Serbia/Serbian mentions: ~150 occurrences  
+* Conflict-related terms: Significant presence  
+      
        racial_terms = {
            'kosovo': ['kosovo', 'albanian', 'albanians'],
            'serbia': ['serbia', 'serbian', 'serbs'],
@@ -160,15 +127,109 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
    ![img.png](assets/biasdetection.png)
 
-5. **Quantifying Bias**: Quantifying bias by counting conflict-related and peace-related terms in tweets.
+### 4. Bias Quantification
+Measures bias through term frequency analysis:  
+
+* Implements a conflict-peace term ratio analysis  
+* Current bias balance: 0.741071  
+* Tracks both conflict-related and peace-related terminology  
+* Provides numerical metrics for bias assessment  
+
+```def quantify_bias(self):
+    conflict_keywords = ['war', 'violence', 'conflict', 'battle', 'fight', 
+                        'struggle', 'invaded', 'killed']
+    peace_keywords = ['peace', 'harmony', 'unity', 'calm', 'serenity', 
+                     'non-violence']
+
+    # Count occurrences
+    self.tweets_df['conflict_count'] = self.tweets_df['Tweet'].apply(
+        lambda x: sum(x.lower().count(word) for word in conflict_keywords)
+    )
+    self.tweets_df['peace_count'] = self.tweets_df['Tweet'].apply(
+        lambda x: sum(x.lower().count(word) for word in peace_keywords)
+    )
+
+    # Calculate bias balance
+    bias_balance = total_conflict / (total_peace + total_conflict)
+```
 
    ![img.png](assets/quantifyingbias.png)
 
-6. **Mitigation**: Neutralizing gender and racial biases through text manipulation.
+### 5. Bias Mitigation:  
+  Implements content neutralization strategies:   
 
-      ![img.png](assets/biasmitigation.png)
+   -Text Content Neutralization
+     ```def mitigate_bias(self):
+      def neutralize_pronouns(text):
+          for pronoun in ['he', 'him', 'his', 'she', 'her', 'hers']:
+              text = text.replace(pronoun, 'they')
+          return text
+          
+      def neutralize_racial_terms(text):
+          replacements = {
+              'kosovo': 'region',
+              'serbia': 'region',
+              'albanian': 'group',
+              'serbian': 'group',
+              'ethnic': 'community'
+          }
+          for term, replacement in replacements.items():
+              text = re.sub(rf'\b{term}\b', replacement, text, flags=re.IGNORECASE)
+          return text```
+   
 
-7. **Visualization**: Visualizing biases through bar plots, word clouds, and sentiment distributions.
+  ![img.png](assets/biasmitigation.png)
+
+  
+
+### 6.Sentiment Analysis: 
+Distribution of sentiment across the dataset:
+
+* Positive: ~320 tweets  
+* Negative: ~280 tweets  
+* Neutral: Minimal presence
+
+### 7. Model Evaluation and Performance Analysis
+
+#### Implementation Details
+
+```
+def evaluation_model(self):
+    # Data Preparation
+    X = self.tweets_df['neutralized_text']
+    y = self.tweets_df['sentiment'].apply(lambda x: 1 if x == 'POSITIVE' else 0)
+
+    # Train-Test Split
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.3, random_state=42
+    )
+
+    # Text Vectorization
+    vectorizer = CountVectorizer(stop_words='english')
+    X_train_vec = vectorizer.fit_transform(X_train)
+    X_test_vec = vectorizer.transform(X_test)
+
+    # Handle Class Imbalance
+    smote = SMOTE()
+    X_train_resampled, y_train_resampled = smote.fit_resample(X_train_vec, y_train)
+
+    # Model Training and Prediction
+    model = LogisticRegression()
+    model.fit(X_train_resampled, y_train_resampled)
+    y_pred = model.predict(X_test_vec)
+```
+
+#### Performance Metrics
+Performance Metrics:  
+
+* Accuracy: 80.33%  
+* Precision: 0.82 (positive class)  
+* Recall: 0.80 (positive class)  
+* F1-Score: 0.80 (macro average)  
+ 
+
+
+8. **Visualization**: Visualizing biases through bar plots, word clouds, and sentiment distributions.
 
    ![img.png](assets/genderbias.png)
 
@@ -180,13 +241,16 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 
    ![img.png](assets/wordsdistribution.png)
 
-8. **Model Evaluation**: Evaluating sentiment prediction using Logistic Regression and SMOTE for handling class imbalance.
+10. **Model Evaluation**: Evaluating sentiment prediction using Logistic Regression and SMOTE for handling class imbalance.
 
    ![img.png](assets/evaluationmodel.png)
 
+    Uses Logistic Regression with SMOTE for balanced classification:  
+
+
 ---
 
-## Installation and Usage
+## Installation and Setup
 
 ### Prerequisites
   
@@ -215,9 +279,9 @@ This project implements a NLP-based system for analyzing and mitigating biases i
 *Developer agreement form where we specified our academic research use case for ethical bias detection*  
 
 **Usage Compliance**  
-  `Project registered as academic research`  
-  `Data collection focused on public tweets only`   
-  `Compliant with Twitter's developer terms`   
-  `No reselling or redistribution of Twitter data`   
-  `Multiple bearer tokens used for efficient rate limit management`   
+*  `Project registered as academic research`  
+*  `Data collection focused on public tweets only`   
+*  `Compliant with Twitter's developer terms`   
+*  `No reselling or redistribution of Twitter data`   
+*  `Multiple bearer tokens used for efficient rate limit management`   
 
