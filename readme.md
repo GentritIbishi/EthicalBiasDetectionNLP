@@ -36,15 +36,18 @@ This repository contains an advanced Natural Language Processing (NLP) project f
      * **Visualization**: `Matplotlib, Seaborn, WordCloud`
 
  
-  #### Library Functions
-  
-  * Pandas & NumPy: Data manipulation and numerical computations
-  * Tweepy: Twitter API interaction and data collection
-  * Transformers: DistilBERT implementation for sentiment analysis
-  * Scikit-learn: ML modeling and evaluation
-  * TextBlob: Text processing and basic sentiment analysis
-  * SMOTE: Handling class imbalance
-  * Visualization: Matplotlib, Seaborn, WordCloud for data visualization
+ #### Library Functions
+* **Data Processing**
+    * Pandas & NumPy: Data manipulation and numerical computations
+* **API Interaction**
+    * Tweepy: Twitter API interaction and data collection
+* **NLP & ML**
+    * Transformers: DistilBERT implementation for sentiment analysis
+    * Scikit-learn: ML modeling and evaluation
+    * TextBlob: Text processing and basic sentiment analysis
+    * SMOTE: Handling class imbalance
+* **Visualization**
+    * Matplotlib, Seaborn, WordCloud: Data visualization
 
 ### Dataset Specifications
 
@@ -270,7 +273,10 @@ Visualizing biases through bar plots, word clouds, and sentiment distributions.
    ![img.png](assets/sentimentdistribution.png)  
    Figure 11. *Displays sentiment distribution across tweets, showing a relatively balanced distribution between positive (~320) and negative (~280) sentiments, with minimal neutral sentiments.*  
 
-   ![img.png](assets/wordsdistribution.png)
+   ![img.png](assets/wordsdistribution.png)  
+   Figure 12.  *Shows a word cloud visualization of the most frequent terms in the dataset, highlighting key terms related to Kosovo-Serbia discourse.*
+
+*
 
 
 ---
@@ -298,12 +304,12 @@ Visualizing biases through bar plots, word clouds, and sentiment distributions.
        
    <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 01 31" src="https://github.com/user-attachments/assets/1773ddaf-eb0b-4186-9ce2-1771b5b1bb49" />  
    
-   Figure 12. *API Access Selection. Twitter's API pricing plans showing Basic and Pro access levels with their respective rate limits and features*     
+   Figure 13. *API Access Selection. Twitter's API pricing plans showing Basic and Pro access levels with their respective rate limits and features*     
 
 #### Developer Agreement    
    <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 03 52" src="https://github.com/user-attachments/assets/1f1b3e44-6951-4a75-8168-e33d397b52f8" />  
    
-Figure 13. *Developer agreement form where we specified our academic research use case for ethical bias detection*  
+Figure 14. *Developer agreement form where we specified our academic research use case for ethical bias detection*  
 
 **Usage Compliance**  
 *  `Project registered as academic research`  
