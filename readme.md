@@ -33,7 +33,18 @@ This repository contains an advanced Natural Language Processing (NLP) project f
      * **Data Processing**: `Pandas, NumPy`   
      * **NLP Framework**: `Transformers, TextBlob`  
      * **ML**: `scikit-learn, imblearn`  
-     * **Visualization**: `Matplotlib, Seaborn, WordCloud`   
+     * **Visualization**: `Matplotlib, Seaborn, WordCloud`
+
+ 
+  #### Library Functions
+  
+  * Pandas & NumPy: Data manipulation and numerical computations
+  * Tweepy: Twitter API interaction and data collection
+  * Transformers: DistilBERT implementation for sentiment analysis
+  * Scikit-learn: ML modeling and evaluation
+  * TextBlob: Text processing and basic sentiment analysis
+  * SMOTE: Handling class imbalance
+  * Visualization: Matplotlib, Seaborn, WordCloud for data visualization
 
 ### Dataset Specifications
 
@@ -44,8 +55,10 @@ This repository contains an advanced Natural Language Processing (NLP) project f
 * **Focus**: `Kosovo-Serbia relations and associated conflicts`  
 
  
-## Project structure
- <img width="540" alt="Bildschirmfoto 2024-12-21 um 23 11 15" src="https://github.com/user-attachments/assets/5123584b-fba1-48ef-be24-e056c4bd1789" />
+## Project structure  
+ <img width="540" alt="Bildschirmfoto 2024-12-21 um 23 11 15" src="https://github.com/user-attachments/assets/5123584b-fba1-48ef-be24-e056c4bd1789" />  
+ 
+ Figure 1.  *Project structure*    
 
 ---
 
@@ -53,7 +66,8 @@ This repository contains an advanced Natural Language Processing (NLP) project f
 
 ### 1. Data Collection  
 The project implements a robust Twitter data collection system with rate limiting and error handling:
-![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)  
+![WebScrapingTweepyAPI.png](assets/WebScrapingTweepyAPI.png)    
+Figure 2. *Illustrates the Tweepy API workflow diagram, showing the real-time data collection process with a 100-row limit per query and the iteration through keywords.*  
    Key features:  
    * Multiple bearer token support  
    * Automatic rate limit handling with wait periods    
@@ -84,6 +98,8 @@ The project implements a robust Twitter data collection system with rate limitin
 * Sentiment analysis using DistilBERT  
 
    ![img.png](assets/preprocessing.png)
+  
+Figure 3. *Displays preprocessing statistics, showing the initial dataset of 668 tweets with 61 duplicates, which were removed to yield a final clean dataset of 607 tweets with no missing values.*  
 
      ```
     def _remove_urls_and_special_chars(self, text):
@@ -125,6 +141,8 @@ Monitors frequency of terms related to:
        }
 
    ![img.png](assets/biasdetection.png)
+    
+  Figure 4. *Shows the output of bias detection step, displaying zero values for gender pronouns usage and specific values for racial terms related to Kosovo (0.502471...) and Serbia (0.456342...), along with the political bias score of 0.0.*    
 
 ### 4. Bias Quantification
 Measures bias through term frequency analysis:  
@@ -152,7 +170,8 @@ Measures bias through term frequency analysis:
     bias_balance = total_conflict / (total_peace + total_conflict)
 ```
 
-   ![img.png](assets/quantifyingbias.png)
+   ![img.png](assets/quantifyingbias.png)  
+   Figure 5. *Shows the bias quantification results with a consistent bias balance score of 0.741071 across multiple entries, indicating a stable bias measurement in the dataset.*  
 
 ### 5. Bias Mitigation:  
   Implements content neutralization strategies:   
@@ -177,7 +196,8 @@ Measures bias through term frequency analysis:
           return text```
    
 
-  ![img.png](assets/biasmitigation.png)
+  ![img.png](assets/biasmitigation.png)   
+  Figure 6. *Confirms the successful execution of the bias mitigation step, indicating that gender and racial biases have been addressed in the text content.*  
 
   
 
@@ -193,7 +213,8 @@ Distribution of sentiment across the dataset:
 Evaluating sentiment prediction using Logistic Regression and SMOTE for handling class imbalance.  
 Uses Logistic Regression with SMOTE for balanced classification:  
 
-   ![img.png](assets/evaluationmodel.png)
+   ![img.png](assets/evaluationmodel.png)  
+   Figure 7. *Displays the model performance metrics: precision (0.82), recall (0.80), and F1-score (0.80), with a confusion matrix showing 71 true negatives and 76 true positives.*  
 
 
 #### Implementation Details
@@ -237,13 +258,17 @@ Performance Metrics:
 ### 8. Visualization:  
 Visualizing biases through bar plots, word clouds, and sentiment distributions.  
 
-   ![img.png](assets/genderbias.png)
+   ![img.png](assets/genderbias.png)   
+   Figure 8. *Shows gender bias analysis through pronoun usage, with neutral pronouns (~45) having the highest frequency, followed by male (~10) and female (~2) pronouns, demonstrating a preference for neutral language.*  
 
-   ![img.png](assets/racialbias.png)
+   ![img.png](assets/racialbias.png)  
+   Figure 9. *Visualizes racial term frequency, showing Kosovo (~190 mentions) having the highest frequency, followed by Serbia (~150 mentions), with Albanian and Serbian terms having lower frequencies.*  
 
-   ![img.png](assets/conflictbiasbalance.png)
+   ![img.png](assets/conflictbiasbalance.png)  
+   Figure 10. *Visualizes the conflict vs peace balance distribution, showing a significant peak around 0.8 on the bias balance scale, indicating a strong tendency towards conflict-related content in the dataset.*   
 
-   ![img.png](assets/sentimentdistribution.png)
+   ![img.png](assets/sentimentdistribution.png)  
+   Figure 11. *Displays sentiment distribution across tweets, showing a relatively balanced distribution between positive (~320) and negative (~280) sentiments, with minimal neutral sentiments.*  
 
    ![img.png](assets/wordsdistribution.png)
 
@@ -269,14 +294,16 @@ Visualizing biases through bar plots, word clouds, and sentiment distributions.
 5. Open and run the main.ipynb file to perform the analysis
 
 ### Twitter API Requirements and Compliance
-### Twitter API Registration Process
-#### API Access Selection     
-   <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 01 31" src="https://github.com/user-attachments/assets/1773ddaf-eb0b-4186-9ce2-1771b5b1bb49" />    
- *Twitter's API pricing plans showing Basic and Pro access levels with their respective rate limits and features*    
+#### Twitter API Registration Process
+       
+   <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 01 31" src="https://github.com/user-attachments/assets/1773ddaf-eb0b-4186-9ce2-1771b5b1bb49" />  
+   
+   Figure 12. *API Access Selection. Twitter's API pricing plans showing Basic and Pro access levels with their respective rate limits and features*     
 
 #### Developer Agreement    
    <img width="250" alt="Bildschirmfoto 2024-12-01 um 14 03 52" src="https://github.com/user-attachments/assets/1f1b3e44-6951-4a75-8168-e33d397b52f8" />  
-*Developer agreement form where we specified our academic research use case for ethical bias detection*  
+   
+Figure 13. *Developer agreement form where we specified our academic research use case for ethical bias detection*  
 
 **Usage Compliance**  
 *  `Project registered as academic research`  
