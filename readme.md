@@ -70,7 +70,7 @@ The project uses DistilBERT, a lightweight version of BERT (Bidirectional Encode
     * Transformers: DistilBERT implementation for sentiment analysis
     * Scikit-learn: ML modeling and evaluation
     * TextBlob: Text processing and basic sentiment analysis
-    * SMOTE: Handling class imbalance
+    * SMOTE (Synthetic Minority Over-sampling Technique): A technique to handle imbalanced datasets by creating synthetic examples of the minority class  
 * **Visualization**
     * Matplotlib, Seaborn, WordCloud: Data visualization
 
@@ -276,10 +276,10 @@ def evaluation_model(self):
 #### Performance Metrics
 Performance Metrics:  
 
-* Accuracy: 80.33%  
-* Precision: 0.82 (positive class)  
-* Recall: 0.80 (positive class)  
-* F1-Score: 0.80 (macro average)  
+* Accuracy: 80.33% (percentage of correct predictions)
+* Precision: 0.82 (positive class) (accuracy of positive predictions)
+* Recall: 0.80 (positive class) (percentage of actual positives correctly identified)
+* F1-Score: 0.80 (macro average) (harmonic mean of precision and recall)
  
 
 
